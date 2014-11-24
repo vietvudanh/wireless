@@ -1,0 +1,68 @@
+[2014-10-03 05:29:17] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in F:\Dropbox\http\blog-laravel\bootstrap\compiled.php:5702
+Stack trace:
+#0 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(5019): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(5007): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(4999): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(722): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(703): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(7763): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(8370): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(8317): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(664): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 F:\Dropbox\http\blog-laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
+[2014-10-03 05:31:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in F:\Dropbox\http\blog-laravel\app\routes.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-03 05:31:45] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in F:\Dropbox\http\blog-laravel\app\routes.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-03 05:31:48] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in F:\Dropbox\http\blog-laravel\app\routes.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-03 05:36:02] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in F:\Dropbox\http\blog-laravel\app\routes.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:51:08] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in F:\Dropbox\http\blog-laravel\app\routes.php:21
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:55:25] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in F:\Dropbox\http\blog-laravel\app\routes.php:19
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:55:33] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in F:\Dropbox\http\blog-laravel\app\routes.php:19
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:55:38] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in F:\Dropbox\http\blog-laravel\app\routes.php:19
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:55:53] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'uSerS' (T_STRING)' in F:\Dropbox\http\blog-laravel\app\routes.php:20
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:55:54] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'uSerS' (T_STRING)' in F:\Dropbox\http\blog-laravel\app\routes.php:20
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-10-05 23:56:06] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in F:\Dropbox\http\blog-laravel\bootstrap\compiled.php:5702
+Stack trace:
+#0 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(5019): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#1 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(5007): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(4999): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#3 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(722): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#4 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(703): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#5 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(7763): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#6 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(8370): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(8317): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(10974): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 F:\Dropbox\http\blog-laravel\bootstrap\compiled.php(664): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 F:\Dropbox\http\blog-laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []
