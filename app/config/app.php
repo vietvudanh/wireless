@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => md5('aerhpqiu0123jcnawerna;ajr0i34'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -190,5 +190,5 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 
 	),
-
+	
 );
