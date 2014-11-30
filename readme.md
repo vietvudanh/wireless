@@ -4,6 +4,17 @@
 
 Backend for wireless network project
 
+## Requirements
+
+>php5-mysql
+>php5-mcrypt
+
+Note: Make sure to enalbe mcrypt by
+
+>sudo php5enmod mcrypt
+
+and restart server after that
+
 ## Installation
 
 Clone project to web server folder
