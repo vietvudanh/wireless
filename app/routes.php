@@ -11,53 +11,21 @@
 |
 */
 
-Route::get('/', function()
+// Route::get('/', function()
+// {
+// 	return View::make('hello');
+// });
+
+// Route group for API versioning
+// 
+Route::group(array('prefix' => 'api/v1'), function()
 {
-	return View::make('hello');
-});
-
-Route::get('users', function()
-{
-	return View::make('hello');
-});
-
-Route::get('questions', function(){
-	return Response::json(array(
-		'grade' => 1,
-		'id' => 1,
-		'content' => 'PERSON_1 has NUMBER_1 apples',
-		'answers' => array(
-			array(
-				'id' => 1,
-				'content' => 'this is answer 1',
-				'correct' => true),
-			array(
-				'id' => 2,
-				'content' => 'this is answer 2',
-				'correct' => false),
-			array(
-				'id' => 3,
-				'content' => 'this is answer 3',
-				'correct' => false),
-			array(
-				'id' => 4,
-				'content' => 'this is answer 4',
-				'correct' => false)
-			),
-		'cover' => '/img/cover-for-question-1.jpg',
-		200
-	));
-});
-
-Route::get('persons', function(){
-	return Response::json(array(
-		'id' => 1,
-		'type' => 'pupil',
-		'name' => 'Michael Jackson',
-		'date_created' => date('Y-m-d'),
-		'timezone' => 'ICT',
-		'affliation' => 'Vietnam National University',
-		'profile' => '/img/profile-img-person-1.jpg',
-		200
-	));
+    // define route to REST controller
+    Route::resource('question', 'QuestionController');
+    Route::resource('answer', 'AnswerController');
+    Route::resource('variable', 'VariableController');
+    Route::resource('chatper', 'ChapterController');
+    Route::resource('grade', 'GradeController');
+    Route::resource('entity', 'EntityController');
+    Route::resource('attribute', 'AttributeController');
 });
