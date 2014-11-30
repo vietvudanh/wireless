@@ -9,14 +9,61 @@ class QuestionController extends \BaseController {
 	 */
 	public function index()
     {
-        $questions = Question::all();
-        $questions->load('variables');
-        foreach($questions as $question) $question->variables->load('answers');
-        return Response::json(array(
-            'error' => false,
-            'questions' => $questions),
-            200
-        );
+    	if (Input::get('chapter') == null){
+    		// no chapter specified, return all
+
+    		$questions = Question::all();
+        
+	        $questions->load('chapter');
+	        foreach($questions as $question) $question->chapter->load('grade');
+
+	        $questions->load('entities');
+	        foreach($questions as $question) $question->entities->load('attributes');
+
+	        $questions->load('variables');
+	        foreach($questions as $question) $question->variables->load('answers');
+
+	        return Response::json(array(
+	            'error' => false,
+	            'questions' => $questions),
+	            200
+	        );
+    	}
+    	else{
+    		$questions = Question::with(array(
+    			'chapter', 
+    			'chapter.grade', 
+    			'entities' => function($e){
+    				$e->orderBy(DB::raw('RAND()'))->take(1);
+    			}, 
+    			'entities.attributes' => function($ea){
+    				$ea->orderBy(DB::raw('RAND()'))->take(1);
+    			}, 
+    			'variables' => function($v){
+    				$v->orderBy(DB::raw('RAND()'))->take(1);
+    			}, 
+    			'variables.answers'
+    			))
+    			->where('chapter_id', '=', Input::get('chapter'))
+    			->orderBy(DB::raw('RAND()'))
+    			->take(1)
+    			->get();
+
+    		if(count($questions) == 0){
+    			return Response::json(array(
+		            'error' => false,
+		            'message' => 'questions not found',
+		            'questions' => $questions),
+		            404
+		        );
+    		} else
+		        return Response::json(array(
+		            'error' => false,
+		            'questions' => $questions),
+		            200
+		        );
+    	}
+        
     }
 
 	/**

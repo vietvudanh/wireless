@@ -25,7 +25,7 @@ class Question extends Eloquent {
      * has-One relationship
      *
      */
-    public function entity(){
-        return $this->hasOne('Entity');
+    public function entities(){
+        return $this->belongsToMany('Entity', 'question_entity', 'question_id','entity_id');
     }
 }

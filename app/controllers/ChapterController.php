@@ -9,11 +9,14 @@ class ChapterController extends \BaseController {
 	 */
 	public function index()
 	{
+		$chapters = Chapter::all();
+		$chapters->load('grade');
+
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
+				'error' => false,
+				'chapters' => $chapters
 			),
-			404
+			200
 		);
 	}
 

@@ -24,7 +24,7 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('question', 'QuestionController');
     Route::resource('answer', 'AnswerController');
     Route::resource('variable', 'VariableController');
-    Route::resource('chatper', 'ChapterController');
+    Route::resource('chapter', 'ChapterController');
     Route::resource('grade', 'GradeController');
     Route::resource('entity', 'EntityController');
     Route::resource('attribute', 'AttributeController');

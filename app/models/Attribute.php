@@ -9,7 +9,7 @@ class Attribute extends Eloquent {
      * one-to-many relationship
      *
      */
-    public function entity(){
-        return $this->belongsTo('Entity');
+    public function entities(){
+        return $this->belongsToMany('Entity', 'entity_attribute', 'attribute_id', 'entity_id');
     }
 }
