@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for wireless
-DROP DATABASE IF EXISTS `wireless`;
 CREATE DATABASE IF NOT EXISTS `wireless` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `wireless`;
 
 
 -- Dumping structure for table wireless.answers
-DROP TABLE IF EXISTS `answers`;
 CREATE TABLE IF NOT EXISTS `answers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` varchar(200) DEFAULT NULL,
@@ -52,7 +50,6 @@ INSERT INTO `answers` (`id`, `value`, `var_id`, `correct`) VALUES
 
 
 -- Dumping structure for table wireless.attributes
-DROP TABLE IF EXISTS `attributes`;
 CREATE TABLE IF NOT EXISTS `attributes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
@@ -75,7 +72,6 @@ INSERT INTO `attributes` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table wireless.chapters
-DROP TABLE IF EXISTS `chapters`;
 CREATE TABLE IF NOT EXISTS `chapters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
@@ -97,13 +93,12 @@ INSERT INTO `chapters` (`id`, `name`, `grade_id`) VALUES
 
 
 -- Dumping structure for table wireless.entities
-DROP TABLE IF EXISTS `entities`;
 CREATE TABLE IF NOT EXISTS `entities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='each questions has an entity type';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='each questions has an entity type';
 
 -- Dumping data for table wireless.entities: ~3 rows (approximately)
 DELETE FROM `entities`;
@@ -116,7 +111,6 @@ INSERT INTO `entities` (`id`, `name`, `type`) VALUES
 
 
 -- Dumping structure for table wireless.entity_attribute
-DROP TABLE IF EXISTS `entity_attribute`;
 CREATE TABLE IF NOT EXISTS `entity_attribute` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `entity_id` int(11) DEFAULT NULL,
@@ -144,7 +138,6 @@ INSERT INTO `entity_attribute` (`id`, `entity_id`, `attribute_id`) VALUES
 
 
 -- Dumping structure for table wireless.grades
-DROP TABLE IF EXISTS `grades`;
 CREATE TABLE IF NOT EXISTS `grades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -163,8 +156,32 @@ INSERT INTO `grades` (`id`, `name`) VALUES
 /*!40000 ALTER TABLE `grades` ENABLE KEYS */;
 
 
+-- Dumping structure for table wireless.histories
+CREATE TABLE IF NOT EXISTS `histories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `question_id` int(11) DEFAULT NULL,
+  `var_id` int(11) DEFAULT NULL,
+  `result` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_histories_users` (`user_id`),
+  KEY `FK_histories_vars` (`var_id`),
+  KEY `FK_histories_questions` (`question_id`),
+  CONSTRAINT `FK_histories_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`),
+  CONSTRAINT `FK_histories_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_histories_vars` FOREIGN KEY (`var_id`) REFERENCES `vars` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='test history of the system';
+
+-- Dumping data for table wireless.histories: ~2 rows (approximately)
+DELETE FROM `histories`;
+/*!40000 ALTER TABLE `histories` DISABLE KEYS */;
+INSERT INTO `histories` (`id`, `user_id`, `question_id`, `var_id`, `result`) VALUES
+	(1, 1, 2, 3, 0),
+	(2, 1, 1, 1, 1);
+/*!40000 ALTER TABLE `histories` ENABLE KEYS */;
+
+
 -- Dumping structure for table wireless.questions
-DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `format` varchar(200) DEFAULT NULL,
@@ -186,7 +203,6 @@ INSERT INTO `questions` (`id`, `format`, `img`, `img_path`, `chapter_id`) VALUES
 
 
 -- Dumping structure for table wireless.question_entity
-DROP TABLE IF EXISTS `question_entity`;
 CREATE TABLE IF NOT EXISTS `question_entity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question_id` int(11) DEFAULT NULL,
@@ -208,8 +224,26 @@ INSERT INTO `question_entity` (`id`, `question_id`, `entity_id`) VALUES
 /*!40000 ALTER TABLE `question_entity` ENABLE KEYS */;
 
 
+-- Dumping structure for table wireless.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `school_name` varchar(50) DEFAULT NULL,
+  `class_name` varchar(50) DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='user of the system';
+
+-- Dumping data for table wireless.users: ~0 rows (approximately)
+DELETE FROM `users`;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `username`, `password`, `school_name`, `class_name`, `date_of_birth`) VALUES
+	(1, 'vietvd', '*6691484EA6B50DDDE1926A220DA01FA9E575C18A', 'UET', 'K56CLC', '1993-03-27');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+
 -- Dumping structure for table wireless.vars
-DROP TABLE IF EXISTS `vars`;
 CREATE TABLE IF NOT EXISTS `vars` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` varchar(200) DEFAULT NULL,
@@ -219,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `vars` (
   CONSTRAINT `FK_vars_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wireless.vars: ~4 rows (approximately)
+-- Dumping data for table wireless.vars: ~3 rows (approximately)
 DELETE FROM `vars`;
 /*!40000 ALTER TABLE `vars` DISABLE KEYS */;
 INSERT INTO `vars` (`id`, `value`, `question_id`) VALUES
