@@ -1,6 +1,6 @@
 <?php
 
-class ChapterController extends \BaseController {
+class UserController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,14 +9,14 @@ class ChapterController extends \BaseController {
 	 */
 	public function index()
 	{
-		$chapters = Chapter::all();
+		$users = User::all();
 
 		return Response::json(array(
-				'error' => false,
-				'chapters' => $chapters
-			),
-			200
-		);
+                'error' => false,
+                'users' => $users
+            ),
+            200
+        );
 	}
 
 
@@ -28,11 +28,11 @@ class ChapterController extends \BaseController {
 	public function create()
 	{
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
-			),
-			404
-		);
+                'error' => true,
+                'message' => 'service not available'
+            ),
+            404
+        );
 	}
 
 
@@ -44,11 +44,11 @@ class ChapterController extends \BaseController {
 	public function store()
 	{
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
-			),
-			404
-		);
+                'error' => true,
+                'message' => 'service not available'
+            ),
+            404
+        );
 	}
 
 
@@ -60,14 +60,14 @@ class ChapterController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$chapter = Chapter::with('questions')->find($id);
+		$user = User::with('histories')->find($id);
 
 		return Response::json(array(
-				'error' => false,
-				'chapter' => $chapter
-			),
-			200
-		);
+                'error' => false,
+                'user' => $user
+            ),
+            200
+        );
 	}
 
 
@@ -80,11 +80,11 @@ class ChapterController extends \BaseController {
 	public function edit($id)
 	{
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
-			),
-			404
-		);
+                'error' => true,
+                'message' => 'service not available'
+            ),
+            404
+        );
 	}
 
 
@@ -97,11 +97,11 @@ class ChapterController extends \BaseController {
 	public function update($id)
 	{
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
-			),
-			404
-		);
+                'error' => true,
+                'message' => 'service not available'
+            ),
+            404
+        );
 	}
 
 
@@ -114,11 +114,11 @@ class ChapterController extends \BaseController {
 	public function destroy($id)
 	{
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
-			),
-			404
-		);
+                'error' => true,
+                'message' => 'service not available'
+            ),
+            404
+        );
 	}
 
 

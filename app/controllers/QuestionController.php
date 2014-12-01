@@ -108,11 +108,11 @@ class QuestionController extends \BaseController {
 	 */
 	public function show($id)
     {
-        $question = Question::find($id);
-     
+        $question = Question::find($id)->with('variables', 'entities');
+
         return Response::json(array(
             'error' => false,
-            'questions' => $question),
+            'question' => $question),
             200
         );
     }

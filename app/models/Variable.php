@@ -20,4 +20,7 @@ class Variable extends Eloquent {
     public function question(){
         return $this->belongsTo('Question');
     }
+    public function chapter(){
+        return $this->belongsTo('History');
+    }
 }

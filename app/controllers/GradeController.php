@@ -9,11 +9,13 @@ class GradeController extends \BaseController {
 	 */
 	public function index()
 	{
+		$grades = Grade::all();
+
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
+				'error' => false,
+				'grades' => $grades
 			),
-			404
+			200
 		);
 	}
 
@@ -58,11 +60,13 @@ class GradeController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		$grade = Grade::with('chapters')->find($id);
+
 		return Response::json(array(
-				'error' => true,
-				'message' => 'service not available'
+				'error' => false,
+				'grade' => $grade
 			),
-			404
+			200
 		);
 	}
 

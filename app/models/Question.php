@@ -14,15 +14,18 @@ class Question extends Eloquent {
     }
 
     /**
-     * one-to-many relationship
+     * has-One relationship
      *
      */
     public function chapter(){
         return $this->belongsTo('Chapter');
     }
+    public function history(){
+        return $this->belongsTo('History');
+    }
 
     /**
-     * has-One relationship
+     * one-to-many relationship
      *
      */
     public function entities(){
