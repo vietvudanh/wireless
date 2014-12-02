@@ -20,10 +20,13 @@ class HistoryController extends \BaseController {
 	        );
 		}
 		else 
+			$histories = History::all();
+
 			return Response::json(array(
-	                'error' => true
+	                'error' => false,
+	                'history' => $histories
 	            ),
-	            400
+	            200
 	        );
 	}
 

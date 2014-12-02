@@ -60,7 +60,7 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$user = User::with('histories')->find($id);
+		$user = User::find($id);
 
 		return Response::json(array(
                 'error' => false,
