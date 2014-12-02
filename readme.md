@@ -30,8 +30,6 @@ aceess at /<folder-name>/public. i.e:
 
         http://localhost/wireless/public
 
-## documentation
-
-documentation can be access at [Here](https://docs.google.com/document/d/1qjX9mYRFk6q2hzVwudQcOvfOQ0YxmwY5W31Y8SyckIM/edit?usp=sharing)
+please refer to the documentation [Here](https://docs.google.com/document/d/1qjX9mYRFk6q2hzVwudQcOvfOQ0YxmwY5W31Y8SyckIM/edit?usp=sharing) for the details of how to use the API
 
 @Group 6, Wireless network, UET, VNU, 2014
