@@ -9,14 +9,26 @@ class ChapterController extends \BaseController {
 	 */
 	public function index()
 	{
-		$chapters = Chapter::all();
+		if(Input::get('grade_id') == null){
+			$chapters = Chapter::all();
 
-		return Response::json(array(
-				'error' => false,
-				'chapters' => $chapters
-			),
-			200
-		);
+			return Response::json(array(
+					'error' => false,
+					'chapters' => $chapters
+				),
+				200
+			);
+		}
+		else{
+			$chapters = Chapter::where('grade_id', '=', Input::get('grade_id'))->get();
+
+			return Response::json(array(
+					'error' => false,
+					'chapters' => $chapters
+				),
+				200
+			);
+		}
 	}
 
 

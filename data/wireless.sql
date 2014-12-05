@@ -85,8 +85,8 @@ CREATE TABLE IF NOT EXISTS `chapters` (
 DELETE FROM `chapters`;
 /*!40000 ALTER TABLE `chapters` DISABLE KEYS */;
 INSERT INTO `chapters` (`id`, `name`, `grade_id`) VALUES
-	(1, 'Cộng trừ khoảng 10', 1),
-	(2, 'Cộng trừ khoảng 20', 1),
+	(1, 'Cộng trừ khoảng 10', 2),
+	(2, 'Cộng trừ khoảng 20', 2),
 	(3, 'Nhân khoảng 10', 2),
 	(4, 'Bảng cửu chương', 3);
 /*!40000 ALTER TABLE `chapters` ENABLE KEYS */;
@@ -185,9 +185,10 @@ INSERT INTO `histories` (`id`, `user_id`, `question_id`, `var_id`, `result`) VAL
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `format` varchar(200) DEFAULT NULL,
+  `chapter_id` int(11) DEFAULT NULL,
   `img` tinyint(4) DEFAULT NULL,
   `img_path` varchar(200) DEFAULT NULL,
-  `chapter_id` int(11) DEFAULT NULL,
+  `difficulty` tinyint(4) DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `FK_questions_chapters_idx` (`chapter_id`),
   CONSTRAINT `FK_questions_chapters` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -196,9 +197,9 @@ CREATE TABLE IF NOT EXISTS `questions` (
 -- Dumping data for table wireless.questions: ~2 rows (approximately)
 DELETE FROM `questions`;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
-INSERT INTO `questions` (`id`, `format`, `img`, `img_path`, `chapter_id`) VALUES
-	(1, '$VAR + $VAR = ?', 0, NULL, 1),
-	(2, '$ENT có $VAR $ATT, $ENT có $VAR $ATT. Hỏi cả 2 có $ATT', 0, NULL, 2);
+INSERT INTO `questions` (`id`, `format`, `chapter_id`, `img`, `img_path`, `difficulty`) VALUES
+	(1, '$VAR + $VAR = ?', 1, 0, NULL, 1),
+	(2, '$ENT có $VAR $ATT, $ENT có $VAR $ATT. Hỏi cả 2 có $ATT', 2, 0, NULL, 1);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 
