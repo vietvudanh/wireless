@@ -16,6 +16,7 @@ USE `wireless`;
 
 
 -- Dumping structure for table wireless.answers
+DROP TABLE IF EXISTS `answers`;
 CREATE TABLE IF NOT EXISTS `answers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` varchar(200) DEFAULT NULL,
@@ -50,6 +51,7 @@ INSERT INTO `answers` (`id`, `value`, `var_id`, `correct`) VALUES
 
 
 -- Dumping structure for table wireless.attributes
+DROP TABLE IF EXISTS `attributes`;
 CREATE TABLE IF NOT EXISTS `attributes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
@@ -72,6 +74,7 @@ INSERT INTO `attributes` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table wireless.chapters
+DROP TABLE IF EXISTS `chapters`;
 CREATE TABLE IF NOT EXISTS `chapters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
@@ -93,6 +96,7 @@ INSERT INTO `chapters` (`id`, `name`, `grade_id`) VALUES
 
 
 -- Dumping structure for table wireless.entities
+DROP TABLE IF EXISTS `entities`;
 CREATE TABLE IF NOT EXISTS `entities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT NULL,
@@ -111,6 +115,7 @@ INSERT INTO `entities` (`id`, `name`, `type`) VALUES
 
 
 -- Dumping structure for table wireless.entity_attribute
+DROP TABLE IF EXISTS `entity_attribute`;
 CREATE TABLE IF NOT EXISTS `entity_attribute` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `entity_id` int(11) DEFAULT NULL,
@@ -138,6 +143,7 @@ INSERT INTO `entity_attribute` (`id`, `entity_id`, `attribute_id`) VALUES
 
 
 -- Dumping structure for table wireless.grades
+DROP TABLE IF EXISTS `grades`;
 CREATE TABLE IF NOT EXISTS `grades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -157,6 +163,7 @@ INSERT INTO `grades` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table wireless.histories
+DROP TABLE IF EXISTS `histories`;
 CREATE TABLE IF NOT EXISTS `histories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -182,6 +189,7 @@ INSERT INTO `histories` (`id`, `user_id`, `question_id`, `var_id`, `result`) VAL
 
 
 -- Dumping structure for table wireless.questions
+DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `format` varchar(200) DEFAULT NULL,
@@ -204,6 +212,7 @@ INSERT INTO `questions` (`id`, `format`, `chapter_id`, `img`, `img_path`, `diffi
 
 
 -- Dumping structure for table wireless.question_entity
+DROP TABLE IF EXISTS `question_entity`;
 CREATE TABLE IF NOT EXISTS `question_entity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question_id` int(11) DEFAULT NULL,
@@ -226,6 +235,7 @@ INSERT INTO `question_entity` (`id`, `question_id`, `entity_id`) VALUES
 
 
 -- Dumping structure for table wireless.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) DEFAULT NULL,
@@ -236,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='user of the system';
 
--- Dumping data for table wireless.users: ~0 rows (approximately)
+-- Dumping data for table wireless.users: ~1 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `school_name`, `class_name`, `date_of_birth`) VALUES
@@ -245,6 +255,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `school_name`, `class_name`, 
 
 
 -- Dumping structure for table wireless.vars
+DROP TABLE IF EXISTS `vars`;
 CREATE TABLE IF NOT EXISTS `vars` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` varchar(200) DEFAULT NULL,
@@ -254,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `vars` (
   CONSTRAINT `FK_vars_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wireless.vars: ~3 rows (approximately)
+-- Dumping data for table wireless.vars: ~4 rows (approximately)
 DELETE FROM `vars`;
 /*!40000 ALTER TABLE `vars` DISABLE KEYS */;
 INSERT INTO `vars` (`id`, `value`, `question_id`) VALUES
