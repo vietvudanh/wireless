@@ -1,6 +1,6 @@
 <?php
 
-class EntityController extends \BaseController {
+class EntityAttributeController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,11 +9,11 @@ class EntityController extends \BaseController {
 	 */
 	public function index()
 	{
-		$entities = Entity::all();
+		$pivots = EntityAttribute::all();
 
 		return Response::json(array(
 				'error' => false,
-				'entities' => $entities
+				'pivots' => $pivots
 			),
 			200
 		);

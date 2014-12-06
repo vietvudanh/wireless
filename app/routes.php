@@ -40,4 +40,6 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('attribute', 'AttributeController');
     Route::resource('user', 'UserController');
     Route::resource('history', 'HistoryController');
+    Route::resource('question_entity', 'QuestionEntityController');
+    Route::resource('entity_attribute', 'EntityAttributeController');
 });

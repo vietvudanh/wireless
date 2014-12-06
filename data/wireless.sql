@@ -108,9 +108,9 @@ CREATE TABLE IF NOT EXISTS `entities` (
 DELETE FROM `entities`;
 /*!40000 ALTER TABLE `entities` DISABLE KEYS */;
 INSERT INTO `entities` (`id`, `name`, `type`) VALUES
-	(1, 'Lan,Bình,Nam,An,Bình', 'Học sinh'),
-	(2, 'Nhà máy A,Nhà máy B', 'Vật'),
-	(3, 'Cô giáo Thủy, Cô giáo Thảo, Cô giáo Thơm', 'Cô giáo');
+	(1, 'Lan,Bình,Nam,An,Bình', 'hoc_sinh'),
+	(2, 'Nhà máy A,Nhà máy B', 'vat_the'),
+	(3, 'Cô giáo Thủy, Cô giáo Thảo, Cô giáo Thơm', 'giao_vien');
 /*!40000 ALTER TABLE `entities` ENABLE KEYS */;
 
 
@@ -197,17 +197,19 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `img` tinyint(4) DEFAULT NULL,
   `img_path` varchar(200) DEFAULT NULL,
   `difficulty` tinyint(4) DEFAULT '1',
+  `solution` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_questions_chapters_idx` (`chapter_id`),
   CONSTRAINT `FK_questions_chapters` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='format of the question';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='format of the question';
 
 -- Dumping data for table wireless.questions: ~2 rows (approximately)
 DELETE FROM `questions`;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
-INSERT INTO `questions` (`id`, `format`, `chapter_id`, `img`, `img_path`, `difficulty`) VALUES
-	(1, '$VAR + $VAR = ?', 1, 0, NULL, 1),
-	(2, '$ENT có $VAR $ATT, $ENT có $VAR $ATT. Hỏi cả 2 có $ATT', 2, 0, NULL, 1);
+INSERT INTO `questions` (`id`, `format`, `chapter_id`, `img`, `img_path`, `difficulty`, `solution`) VALUES
+	(1, '$VAR + $VAR = ?', 1, 0, NULL, 1, NULL),
+	(2, '$ENT có $VAR $ATT, $ENT có $VAR $ATT. Hỏi cả 2 có bao nhiêu $ATT?', 2, 0, NULL, 1, 'Tổng số $ATT là $VAR + $VAR = ...'),
+	(3, '$ENT có $VAR $ATT, $ENT có hơn $ENT $VAR $ATT. Hỏi $ENT có bao nhiêu $ATT?', 2, NULL, NULL, 1, NULL);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 
@@ -222,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `question_entity` (
   KEY `FK_questions_entities_entities` (`entity_id`),
   CONSTRAINT `FK_questions_entities_entities` FOREIGN KEY (`entity_id`) REFERENCES `entities` (`id`),
   CONSTRAINT `FK_questions_entities_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table wireless.question_entity: ~3 rows (approximately)
 DELETE FROM `question_entity`;
@@ -230,7 +232,8 @@ DELETE FROM `question_entity`;
 INSERT INTO `question_entity` (`id`, `question_id`, `entity_id`) VALUES
 	(1, 2, 1),
 	(2, 2, 2),
-	(3, 2, 3);
+	(3, 2, 3),
+	(4, 3, 1);
 /*!40000 ALTER TABLE `question_entity` ENABLE KEYS */;
 
 
@@ -246,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='user of the system';
 
--- Dumping data for table wireless.users: ~1 rows (approximately)
+-- Dumping data for table wireless.users: ~0 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `password`, `school_name`, `class_name`, `date_of_birth`) VALUES
@@ -263,16 +266,17 @@ CREATE TABLE IF NOT EXISTS `vars` (
   PRIMARY KEY (`id`),
   KEY `FK_vars_questions_idx` (`question_id`),
   CONSTRAINT `FK_vars_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table wireless.vars: ~4 rows (approximately)
+-- Dumping data for table wireless.vars: ~3 rows (approximately)
 DELETE FROM `vars`;
 /*!40000 ALTER TABLE `vars` DISABLE KEYS */;
 INSERT INTO `vars` (`id`, `value`, `question_id`) VALUES
 	(1, '3,4', 1),
 	(2, '1,1', 1),
 	(3, '10,20', 2),
-	(4, '5,7', 2);
+	(4, '5,7', 2),
+	(5, '5,6', 3);
 /*!40000 ALTER TABLE `vars` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
