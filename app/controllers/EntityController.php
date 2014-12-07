@@ -9,14 +9,27 @@ class EntityController extends \BaseController {
 	 */
 	public function index()
 	{
-		$entities = Entity::all();
+		if(Input::get('type') != null){
+			$entity = Entity::where('type', '=', Input::get('type'))->get();
 
-		return Response::json(array(
-				'error' => false,
-				'entities' => $entities
-			),
-			200
-		);
+			return Response::json(array(
+					'error' => false,
+					'entitie' => $entity
+				),
+				200
+			);
+		}
+		else{
+
+			$entities = Entity::all();
+
+			return Response::json(array(
+					'error' => false,
+					'entities' => $entities
+				),
+				200
+			);
+		}
 	}
 
 
