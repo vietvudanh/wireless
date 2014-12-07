@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '0.0.0.0',
 			'database'  => 'wireless',
-			'username'  => 'wireless',
-			'password'  => 'wireless',
+			'username'  => 'vietvudanh',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
