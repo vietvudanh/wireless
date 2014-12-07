@@ -12,4 +12,13 @@ class User extends Eloquent {
     public function histories(){
         return $this->hasMany('History');
     }
+    
+    /**
+     * 
+     * 
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = md5($value);
+    }
 }
