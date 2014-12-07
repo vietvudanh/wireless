@@ -36,7 +36,7 @@ return array(
 		),
 		'grade' => array(
 			'title' => 'Type',
-			'type' => 'relatipnship',
+			'type' => 'relationship',
 			'name_field' => 'id'
 		),
 	),
