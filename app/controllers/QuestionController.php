@@ -10,7 +10,8 @@ class QuestionController extends \BaseController {
 	public function index()
     {
         // request using chapter id
-    	if (Input::get('chapter_id') != null){
+    	if (Input::get('chapter_id') != null && Input::get('number_of_question') != null){
+
             $questions = Question::with(array(
                 'chapter', 
                 'chapter.grade', 
@@ -27,7 +28,7 @@ class QuestionController extends \BaseController {
                 ))
                 ->where('chapter_id', '=', Input::get('chapter_id'))
                 ->orderBy(DB::raw('RAND()'))
-                ->take(1)
+                ->take(intVal(Input::get('number_of_question')))
                 ->get();
 
             if(count($questions) == 0){
@@ -45,23 +46,48 @@ class QuestionController extends \BaseController {
                 );
     	}
         // request using grade id
-        if (Input::get('grade_id') != null){
-            $questions = DB::table('questions')
-                        ->join('chapters', 'questions.chapter_id', '=', 'chapters.id')
-                        ->join('grades', 'chapters.grade_id', '=', 'grades.id')
+        if (Input::get('grade_id') != null && Input::get('number_of_question') != null){
+            $grades = DB::table('chapters')
+                        ->select('id')
+                        ->where('grade_id', '=', Input::get('grade_id'))
                         ->get();
+            $ids = array();
+            foreach($grades as $g) $ids[] = $g->id;
+
+            $questions = Question::with(array(
+                'chapter', 
+                'chapter.grade' => function($cg){
+                    $cg->where('grades.id', '=', Input::get('grade_id'));
+                }, 
+                'entities' => function($e){
+                    $e->orderBy(DB::raw('RAND()'))->take(1);
+                }, 
+                'entities.attributes' => function($ea){
+                    $ea->orderBy(DB::raw('RAND()'))->take(1);
+                }, 
+                'variables' => function($v){
+                    $v->orderBy(DB::raw('RAND()'))->take(1);
+                }, 
+                'variables.answers'
+                ))
+                ->whereIn('chapter_id', $ids)
+                ->orderBy(DB::raw('RAND()'))
+                ->take(intVal(Input::get('number_of_question')))
+                ->get();
 
             if(count($questions) == 0){
                 return Response::json(array(
                     'error' => false,
                     'message' => 'questions not found',
-                    'questions' => $questions),
+                    'questions' => $questions,
+                    ),
                     404
                 );
             } else
                 return Response::json(array(
                     'error' => false,
-                    'questions' => $questions),
+                    'questions' => $questions,
+                    ),
                     200
                 );
         }

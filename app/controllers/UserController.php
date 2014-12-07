@@ -43,9 +43,32 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
+        if(Input::get('username') != null 
+            && Input::get('password') != null
+            && Input::get('school_name') != null
+            && Input::get('class_name') != null
+            && Input::get('date_of_birth') != null ){
+            $user = new User;
+
+            $user->username = Input::get('username');
+            $user->password = md5(Input::get('password'));
+            $user->school_name = Input::get('school_name');
+            $user->class_name = Input::get('class_name');
+            $user->date_of_birth = date('Y-m-d', strtotime(Input::get('date_of_birth')));
+
+            $user->save();
+
+            return Response::json(array(
+                    'error' => false,
+                    'user' => $user
+                ),
+                200
+            );
+        }
+        
 		return Response::json(array(
                 'error' => true,
-                'message' => 'service not available'
+                'message' => 'some parameters are missing'
             ),
             404
         );
