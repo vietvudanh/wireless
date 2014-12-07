@@ -1,0 +1,367 @@
+﻿{
+	"dang2":
+	[
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhvuong",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình vuông"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtron",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tròn"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+	
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtamgiac",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tam giác"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+	
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhvuong",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình vuông"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtron",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tròn"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+	
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtamgiac",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tam giác"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhvuong",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình vuông"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtron",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tròn"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtamgiac",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tam giác"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhvuong",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình vuông"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtron",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tròn"
+		},
+		{
+			"chude":"5",
+			"noidung":"1",
+		
+			"cauhoi":"Hình dưới đây là hình gì?",
+			"hinhanh":"hinhtamgiac",
+			"a":"Hình vuông",
+			"b":"Hình tròn",
+			"c":"Hình tam giác",
+			"dapan":"Hình tam giác"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong1",
+			"a":"1",
+			"b":"2",
+			"c":"3",
+			"dapan":"3"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong2",
+			"a":"1",
+			"b":"2",
+			"c":"3",
+			"dapan":"2"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong3",
+			"a":"1",
+			"b":"2",
+			"c":"3",
+			"dapan":"2"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong4",
+			"a":"1",
+			"b":"2",
+			"c":"3",
+			"dapan":"3"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong1",
+			"a":"4",
+			"b":"2",
+			"c":"3",
+			"dapan":"3"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong2",
+			"a":"4",
+			"b":"2",
+			"c":"3",
+			"dapan":"2"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong3",
+			"a":"4",
+			"b":"2",
+			"c":"3",
+			"dapan":"2"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong4",
+			"a":"4",
+			"b":"2",
+			"c":"3",
+			"dapan":"3"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong1",
+			"a":"2",
+			"b":"3",
+			"c":"4",
+			"dapan":"3"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong2",
+			"a":"2",
+			"b":"3",
+			"c":"4",
+			"dapan":"2"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong3",
+			"a":"2",
+			"b":"3",
+			"c":"4",
+			"dapan":"2"
+		},
+		{
+			"chude":"5",
+			"noidung":"6",
+			"cauhoi":"Hình dưới đây có bao nhiêu hình vuông?",
+			"hinhanh":"demhinhvuong4",
+			"a":"2",
+			"b":"3",
+			"c":"4",
+			"dapan":"3"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0100",
+			"a":"Một giờ",
+			"b":"Một giờ rưỡi",
+			"c":"Hai giờ",
+			"dapan":"Một giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0200",
+			"a":"Một giờ rưỡi",
+			"b":"Hai giờ",
+			"c":"Hai giờ rưỡi",
+			"dapan":"Hai giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0400",
+			"a":"Ba giờ",
+			"b":"Bốn giờ",
+			"c":"Năm giờ",
+			"dapan":"Bốn giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0500",
+			"a":"Ba giờ",
+			"b":"Bốn giờ",
+			"c":"Năm giờ",
+			"dapan":"Năm giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0600",
+			"a":"Năm giờ rưỡi",
+			"b":"Sáu giờ",
+			"c":"Bảy giờ",
+			"dapan":"Sáu giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0700",
+			"a":"Bảy giờ",
+			"b":"Tám giờ",
+			"c":"Chín giờ",
+			"dapan":"Bảy giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0800",
+			"a":"Bảy giờ",
+			"b":"Tám giờ",
+			"c":"Chín giờ",
+			"dapan":"Tám giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"0900",
+			"a":"Bảy giờ",
+			"b":"Tám giờ",
+			"c":"Chín giờ",
+			"dapan":"Chín giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"1000",
+			"a":"Mười giờ rưỡi",
+			"b":"Mười giờ",
+			"c":"Mười hai giờ",
+			"dapan":"Mười giở rưỡi"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"1100",
+			"a":"Mười một giờ",
+			"b":"Mười một giờ rưỡi",
+			"c":"Mười hai giờ",
+			"dapan":"Mười một giờ"
+		},
+		{
+			"chude":"6",
+			"noidung":"1",
+			"cauhoi":"Trong hình dưới, đồng hồ chỉ mấy giờ?",
+			"hinhanh":"1200",
+			"a":"Mười hai giờ",
+			"b":"Một giờ",
+			"c":"Hai giờ",
+			"dapan":"Mười hai giờ"
+		}
+	]
+}
