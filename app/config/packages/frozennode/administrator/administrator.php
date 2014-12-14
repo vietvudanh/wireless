@@ -55,6 +55,7 @@ return array(
 		'Questions-A-V-E' => array('questions', 'vars', 'answers',	'questions_entities',),
 		'Entity-A' => array('entities', 'attributes', 'entities_attributes'),
 		'Grade-Chapter' => array('grades', 'chapters', ),
+		'images',
 		'User-History' => array('users', 'histories'),
 		'Settings' => array('settings.site'),
 	),
@@ -65,8 +66,7 @@ return array(
 	 *
 	 * @type closure
 	 */
-	'permission'=> function()
-	{
+	'permission'=> function(){
 		// return Auth::check();
 		return true;
 	},

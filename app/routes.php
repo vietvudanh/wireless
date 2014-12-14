@@ -42,4 +42,5 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('history', 'HistoryController');
     Route::resource('question_entity', 'QuestionEntityController');
     Route::resource('entity_attribute', 'EntityAttributeController');
+    Route::resource('image', 'ImageController');
 });

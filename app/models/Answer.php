@@ -10,6 +10,6 @@ class Answer extends Eloquent {
      *
      */
     public function variable(){
-        return $this->belongsTo('Variable');
+        return $this->belongsTo('Variable', 'var_id');
     }
 }
