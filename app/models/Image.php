@@ -6,7 +6,9 @@ class Image extends Eloquent {
     
     public function setImgAttribute($value)
     {
-        $tmp = URL::to('/').'/images/'.rand(100,1000).'-'.$value;
+        $spl = explode(' ', $value);
+        $name = implode('_', $spl);
+        $tmp = URL::to('/').'/images/'.$name;
         $this->attributes['img'] = $tmp;
     }
 }

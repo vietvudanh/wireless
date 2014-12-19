@@ -56,9 +56,7 @@ class QuestionController extends \BaseController {
 
             $questions = Question::with(array(
                 'chapter', 
-                'chapter.grade' => function($cg){
-                    $cg->where('grades.id', '=', Input::get('grade_id'));
-                }, 
+                'chapter.grade',
                 'entities' => function($e){
                     $e->orderBy(DB::raw('RAND()'))->take(1);
                 }, 
@@ -87,6 +85,7 @@ class QuestionController extends \BaseController {
                 return Response::json(array(
                     'error' => false,
                     'questions' => $questions,
+                    'query' => DB::getQueryLog()
                     ),
                     200
                 );
